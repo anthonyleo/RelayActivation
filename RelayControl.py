@@ -65,7 +65,7 @@ try:
         while 1:
 
             cycleRelays()
-            print("Cycled relays #", pressCounter, "Time Stamp: ", date.today())
+            print("Cycled relays #", pressCounter, ". Time Stamp: ", date.today())
             pressCounter = pressCounter + 1
 
         
@@ -73,7 +73,7 @@ try:
         while pressCounter <= numberCycles:
 
             cycleRelays()
-            print("Cycled relays #", pressCounter, "of", numberCycles)
+            print("Cycled relays #", pressCounter, "of", numberCycles, ". Time Stamp: ", date.today())
             pressCounter = pressCounter + 1
     
         print(numberCycles, " Cycles completed")

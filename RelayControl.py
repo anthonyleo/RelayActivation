@@ -62,8 +62,8 @@ try:
     if infCycleFlag == 1:
         while 1:
             
-            now = datetime.now()
-            s1 = now.strftime("%m/%d/%y , %H:%M:%S")
+            now = date.now()
+            s1 = now.strftime("%d/%m/%y , %H:%M:%S")
             cycleRelays()
             print("Cycled relays #", pressCounter, ". Time Stamp: ", s1)
             pressCounter = pressCounter + 1
@@ -72,8 +72,8 @@ try:
     elif infCycleFlag == 0:
         while pressCounter <= numberCycles:
 
-            now = datetime.now()
-            s1 = now.strftime("%m/%d/%y , %H:%M:%S")
+            now = date.now()
+            s1 = now.strftime("%d/%m/%y , %H:%M:%S")
             cycleRelays()
             print("Cycled relays #", pressCounter, "of", numberCycles, ". Time Stamp: ", s1)
             pressCounter = pressCounter + 1

@@ -7,11 +7,9 @@ import RPi.GPIO as GPIO
 from time import sleep
 import datetime
 from datetime import date
-date.fromisoformat('2022-10-18')
 import csv
 import os
 import keyboard
-
 
 #<<<<<<< HEAD
 def cycleRelays():
@@ -63,17 +61,21 @@ else:
 try:
     if infCycleFlag == 1:
         while 1:
-
+            
+            now = datetime.now()
+            s1 = now.strftime("%m/%d/%y , %H:%M:%S")
             cycleRelays()
-            print("Cycled relays #", pressCounter, ". Time Stamp: ", date.today())
+            print("Cycled relays #", pressCounter, ". Time Stamp: ", s1)
             pressCounter = pressCounter + 1
 
         
     elif infCycleFlag == 0:
         while pressCounter <= numberCycles:
 
+            now = datetime.now()
+            s1 = now.strftime("%m/%d/%y , %H:%M:%S")
             cycleRelays()
-            print("Cycled relays #", pressCounter, "of", numberCycles, ". Time Stamp: ", date.today())
+            print("Cycled relays #", pressCounter, "of", numberCycles, ". Time Stamp: ", s1)
             pressCounter = pressCounter + 1
     
         print(numberCycles, " Cycles completed")

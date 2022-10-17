@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+#<<<<<<< HEAD
 # Test script for 3-ch RPi Relay Board
 =======
 # Script for 3-ch RPi Relay Board

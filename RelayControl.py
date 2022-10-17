@@ -25,7 +25,7 @@ def cycleRelays():
 pressCounter = 1
 =======
 #I made a change here!
-#And here!@@@@@!@@!@@!!!!!!!!!!!!!!!!@!@!@@!@!!@@!@#@!!@@!#!!##
+#Windows Visual Studio message!
 pressCounter = 0
 >>>>>>> 5bd8b5ff5860aab12ce2ee97396b27227e80d271
 

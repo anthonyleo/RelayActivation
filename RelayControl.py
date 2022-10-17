@@ -10,14 +10,22 @@ import csv
 import os
 import keyboard
 
+
 <<<<<<< HEAD
 def cycleRelays():
     # Relays are active-low
     GPIO.output(relay1,True)
-    sleep(3)
+    if rigType == "P":
+        sleep(3)
+    else:
+        sleep(6)
 
+    
     GPIO.output(relay1,False)
-    sleep(5)
+    if rigType == "P":
+        sleep(5)
+    else:
+        sleep(10)
     
     return
 
@@ -42,6 +50,7 @@ GPIO.setup(relay1,GPIO.OUT)
 #GPIO.setup(relay3,GPIO.OUT) but relay 3 not in use
 
 <<<<<<< HEAD
+rigType = input("Specify test rig, 'P' for Press or 'L' for Lifter? ")
 numCycles = input("Enter number of desired cycles. ")
 
 if len(numCycles) == 0:

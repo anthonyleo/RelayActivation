@@ -6,6 +6,8 @@
 import RPi.GPIO as GPIO
 from time import sleep
 import datetime
+from datetime import date
+date.fromisoformat('2022-10-18')
 import csv
 import os
 import keyboard
@@ -63,7 +65,7 @@ try:
         while 1:
 
             cycleRelays()
-            print("Cycled relays #", pressCounter)
+            print("Cycled relays #", pressCounter, "Time Stamp: ", date.today())
             pressCounter = pressCounter + 1
 
         

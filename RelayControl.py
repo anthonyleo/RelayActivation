@@ -6,7 +6,7 @@ import csv
 import os
 import keyboard
 
-
+#I made a change here!
 pressCounter = 0
 
 # Relay channel definitions

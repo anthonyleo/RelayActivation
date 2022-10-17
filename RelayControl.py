@@ -30,7 +30,7 @@ def cycleRelays():
     return
 
 
-pressCounter = 1
+pressCounter = pressCounter + 1
 =======
 #I made a change here!
 #Windows Visual Studio message!
@@ -81,14 +81,15 @@ try:
 try:
     while True:
         
+        cycleRelays()
         # Relays are active-low
-        GPIO.output(relay1,True)
-        sleep(3)
+        #GPIO.output(relay1,True)
+        #sleep(3)
 
         print("Cycling relays #", pressCounter)
-        GPIO.output(relay1,False)
-        sleep(5)
-        pressCounter = pressCounter + 1
+        #GPIO.output(relay1,False)
+        #sleep(5)
+        #pressCounter = pressCounter + 1
 >>>>>>> 5bd8b5ff5860aab12ce2ee97396b27227e80d271
     
 except KeyboardInterrupt:

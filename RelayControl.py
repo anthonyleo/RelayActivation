@@ -77,18 +77,18 @@ try:
         print(numberCycles, " Cycles completed")
 #=======
 
-try:
-    while True:
+#try:
+#    while True:
         
-        cycleRelays()
+#        cycleRelays()
         # Relays are active-low
         #GPIO.output(relay1,True)
         #sleep(3)
 
-        print("Cycling relays #", pressCounter)
+#        print("Cycling relays #", pressCounter)
         #GPIO.output(relay1,False)
         #sleep(5)
-        pressCounter = pressCounter + 1
+#        pressCounter = pressCounter + 1
 #>>>>>>> 5bd8b5ff5860aab12ce2ee97396b27227e80d271
     
 except KeyboardInterrupt:

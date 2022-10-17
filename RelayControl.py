@@ -15,17 +15,17 @@ import keyboard
 def cycleRelays():
     # Relays are active-low
     GPIO.output(relay1,True)
-    if rigType == 1:
+    if rigType == 1:    #If rig presser was selected
         sleep(3)
-    else:
+    else:               #Otherwise lifter    
         sleep(6)
 
     
     GPIO.output(relay1,False)
     if rigType == 1:
-        sleep(5)
+        sleep(5)        #If rig presser was selected
     else:
-        sleep(10)
+        sleep(10)       #Otherwise lifter  
     
     return
 
@@ -37,7 +37,7 @@ def getTimeStamp():
 
 
 
-pressCounter = 0
+pressCounter = 1
 #>>>>>>> 5bd8b5ff5860aab12ce2ee97396b27227e80d271
 
 # Relay channel definitions
@@ -55,6 +55,7 @@ GPIO.setup(relay1,GPIO.OUT)
 #<<<<<<< HEAD
 rigType = input("Specify test rig, '1' for Button Press or '2' for Lifter? ")
 numCycles = input("Enter number of desired cycles. ")
+print("Test starting.")
 
 if len(numCycles) == 0:
     infCycleFlag = 1

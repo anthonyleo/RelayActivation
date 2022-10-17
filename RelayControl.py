@@ -15,23 +15,27 @@ import keyboard
 def cycleRelays():
     # Relays are active-low
     GPIO.output(relay1,True)
-    if rigType == "P":
+    if rigType == 1:
         sleep(3)
     else:
         sleep(6)
 
     
     GPIO.output(relay1,False)
-    if rigType == "P":
+    if rigType == 1:
         sleep(5)
     else:
         sleep(10)
     
     return
 
+def getTimeStamp():
+    today = datetime.now()
+    s1 = today.strftime("%d/%m/%y , %H:%M:%S")
 
-pressCounter = 1
-#=======
+    return s1
+
+
 
 pressCounter = 0
 #>>>>>>> 5bd8b5ff5860aab12ce2ee97396b27227e80d271
@@ -49,7 +53,7 @@ GPIO.setup(relay1,GPIO.OUT)
 #GPIO.setup(relay3,GPIO.OUT) but relay 3 not in use
 
 #<<<<<<< HEAD
-rigType = input("Specify test rig, 'P' for Press or 'L' for Lifter? ")
+rigType = input("Specify test rig, '1' for Button Press or '2' for Lifter? ")
 numCycles = input("Enter number of desired cycles. ")
 
 if len(numCycles) == 0:
@@ -62,20 +66,17 @@ try:
     if infCycleFlag == 1:
         while 1:
             
-            today = datetime.now()
-            s1 = today.strftime("%d/%m/%y , %H:%M:%S")
+            
             cycleRelays()
-            print("Cycled relays #", pressCounter, ". Time Stamp: ", s1)
+            print("Cycled relays #", pressCounter, "| Time Stamp:", getTimeStamp())
             pressCounter = pressCounter + 1
 
         
     elif infCycleFlag == 0:
         while pressCounter <= numberCycles:
 
-            today = datetime.now()
-            s1 = today.strftime("%d/%m/%y , %H:%M:%S")
             cycleRelays()
-            print("Cycled relays #", pressCounter, "of", numberCycles, ". Time Stamp: ", s1)
+            print("Cycled relays #", pressCounter, "of", numberCycles, "| Time Stamp:", getTimeStamp())
             pressCounter = pressCounter + 1
     
         print(numberCycles, " Cycles completed")

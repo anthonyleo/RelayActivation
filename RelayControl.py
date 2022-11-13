@@ -15,17 +15,11 @@ import keyboard
 def cycleRelays():
     # Relays are active-low
     GPIO.output(relay1,True)
-    if rigType == 1:    #If rig presser was selected
-        sleep(3)
-    else:               #Otherwise lifter    
-        sleep(6)
+   #If rig presser was selected
+    sleep(engageSleep)             
 
-    
     GPIO.output(relay1,False)
-    if rigType == 1:
-        sleep(5)        #If rig presser was selected
-    else:
-        sleep(10)       #Otherwise lifter  
+    sleep(releaseSleep)
     
     return
 
@@ -53,7 +47,16 @@ GPIO.setup(relay1,GPIO.OUT)
 #GPIO.setup(relay3,GPIO.OUT) but relay 3 not in use
 
 #<<<<<<< HEAD
-rigType = input("Specify test rig, '1' for Button Press or '2' for Lifter? ")
+rigType = input("Specify test rig, '1' for Button Press or '2' for Lifter? or '3' for Lid Rotation")
+if rigType == 1:
+    engageSleep = 3
+    releaseSleep = 5
+if rigType == 2:
+    engageSleep = 6
+    releaseSleep = 10
+if rigType == 3:
+    engageSleep = 3
+    releaseSleep = 8
 numCycles = input("Enter number of desired cycles. ")
 print("Test starting.")
 

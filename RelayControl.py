@@ -19,9 +19,11 @@ releaseSleep = 0
 def cycleRelays():
     # Relays are active-low
     GPIO.output(relay1,True)
+    print(engageSleep)
     sleep(engageSleep)             
 
     GPIO.output(relay1,False)
+    print(releaseSleep)
     sleep(releaseSleep)
     
     return
@@ -50,16 +52,22 @@ GPIO.setup(relay1,GPIO.OUT)
 #GPIO.setup(relay3,GPIO.OUT) but relay 3 not in use
 
 #<<<<<<< HEAD
-rigType = input("Specify test rig, '1' for Button Press or '2' for Lifter? or '3' for Lid Rotation")
+print("Specify test rig, type:")
+print("'1' for Button Press, or")
+print("'2' for Lifter, or")
+print("'3' for Lid Rotation")
+rigType = input(" ")
+
 if rigType == 1:
     engageSleep = 3
     releaseSleep = 5
 elif rigType == 2:
     engageSleep = 6
     releaseSleep = 10
-elif rigType == 3:
+else:
     engageSleep = 3
     releaseSleep = 8
+
 numCycles = input("Enter number of desired cycles. ")
 print("Test starting.")
 

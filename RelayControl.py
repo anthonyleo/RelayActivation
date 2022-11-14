@@ -3,6 +3,7 @@
 #=======
 # Script for 3-ch RPi Relay Board
 #>>>>>>> 5bd8b5ff5860aab12ce2ee97396b27227e80d271
+from platform import release
 import RPi.GPIO as GPIO
 from time import sleep
 import datetime
@@ -10,6 +11,9 @@ from datetime import datetime
 import csv
 import os
 import keyboard
+
+engageSleep = 0
+releaseSleep = 0
 
 #<<<<<<< HEAD
 def cycleRelays():

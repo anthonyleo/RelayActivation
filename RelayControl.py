@@ -19,11 +19,9 @@ releaseSleep = 0
 def cycleRelays():
     # Relays are active-low
     GPIO.output(relay1,True)
-    print(engageSleep)
     sleep(engageSleep)             
 
     GPIO.output(relay1,False)
-    print(releaseSleep)
     sleep(releaseSleep)
     
     return

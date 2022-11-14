@@ -19,7 +19,6 @@ releaseSleep = 0
 def cycleRelays():
     # Relays are active-low
     GPIO.output(relay1,True)
-   #If rig presser was selected
     sleep(engageSleep)             
 
     GPIO.output(relay1,False)
@@ -55,10 +54,10 @@ rigType = input("Specify test rig, '1' for Button Press or '2' for Lifter? or '3
 if rigType == 1:
     engageSleep = 3
     releaseSleep = 5
-if rigType == 2:
+elif rigType == 2:
     engageSleep = 6
     releaseSleep = 10
-if rigType == 3:
+elif rigType == 3:
     engageSleep = 3
     releaseSleep = 8
 numCycles = input("Enter number of desired cycles. ")

@@ -54,15 +54,15 @@ print("Specify test rig, type:")
 print("'1' for Button Press, or")
 print("'2' for Lifter, or")
 print("'3' for Lid Rotation")
-rigType = input(" ")
+rigType = input("")
 
-if rigType == 1:
-    engageSleep = 3
-    releaseSleep = 5
-elif rigType == 2:
+if rigType == 1:    #Button delays
+    engageSleep = 1
+    releaseSleep = 1
+elif rigType == 2:  #Lifter delays
     engageSleep = 6
     releaseSleep = 10
-else:
+else:               #Lid Rotation delays
     engageSleep = 3
     releaseSleep = 8
 

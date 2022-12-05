@@ -19,10 +19,12 @@ releaseSleep = 0
 def cycleRelays():
     # Relays are active-low
     GPIO.output(relay1,True)
-    sleep(engageSleep)             
+    sleep(engageSleep)
+    print(engageSleep)             
 
     GPIO.output(relay1,False)
     sleep(releaseSleep)
+    print(releaseSleep)
     
     return
 
@@ -81,7 +83,7 @@ try:
             
             
             cycleRelays()
-            #print("Cycled relays #", pressCounter, "| Time Stamp:", getTimeStamp())
+            print("Cycled relays #", pressCounter, "| Time Stamp:", getTimeStamp())
             pressCounter = pressCounter + 1
 
         
@@ -89,7 +91,7 @@ try:
         while pressCounter <= numberCycles:
 
             cycleRelays()
-            #print("Cycled relays #", pressCounter, "of", numberCycles, "| Time Stamp:", getTimeStamp())
+            print("Cycled relays #", pressCounter, "of", numberCycles, "| Time Stamp:", getTimeStamp())
             pressCounter = pressCounter + 1
     
         print(numberCycles, " Cycles completed")

@@ -64,7 +64,7 @@ if rigType == 1:    #Button delays
 elif rigType == 2:  #Lifter delays
     engageSleep = 6
     releaseSleep = 10
-elif rigType ==3 :               #Lid Rotation delays
+else:               #Lid Rotation delays
     engageSleep = 3
     releaseSleep = 8
 

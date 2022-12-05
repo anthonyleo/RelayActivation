@@ -19,12 +19,10 @@ releaseSleep = 0
 def cycleRelays():
     # Relays are active-low
     GPIO.output(relay1,True)
-    sleep(engageSleep)
-    print(engageSleep)             
+    sleep(engageSleep)            
 
     GPIO.output(relay1,False)
     sleep(releaseSleep)
-    print(releaseSleep)
     
     return
 
@@ -70,7 +68,6 @@ else:               #Lid Rotation delays
 
 numCycles = input("Enter number of desired cycles. ")
 print("Test starting.")
-print(rigType)
 
 if len(numCycles) == 0:
     infCycleFlag = 1

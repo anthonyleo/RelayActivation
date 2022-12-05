@@ -59,8 +59,8 @@ print("'3' for Lid Rotation")
 rigType = input("")
 
 if rigType == 1:    #Button delays
-    engageSleep = 0
-    releaseSleep = 0
+    engageSleep = 1
+    releaseSleep = 1
 elif rigType == 2:  #Lifter delays
     engageSleep = 6
     releaseSleep = 10

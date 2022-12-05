@@ -58,18 +58,19 @@ print("'2' for Lifter, or")
 print("'3' for Lid Rotation")
 rigType = input("")
 
-if rigType == 1:    #Button delays
+if rigType == "1":    #Button delays
     engageSleep = 1
     releaseSleep = 1
-elif rigType == 2:  #Lifter delays
+elif rigType == "2":  #Lifter delays
     engageSleep = 6
     releaseSleep = 10
 else:               #Lid Rotation delays
     engageSleep = 3
     releaseSleep = 8
 
-numCycles = input("Enter number of desired cycles. for ",rigType)
+numCycles = input("Enter number of desired cycles. ")
 print("Test starting.")
+print(rigType)
 
 if len(numCycles) == 0:
     infCycleFlag = 1

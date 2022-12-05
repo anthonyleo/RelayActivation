@@ -68,7 +68,7 @@ elif rigType ==3 :               #Lid Rotation delays
     engageSleep = 3
     releaseSleep = 8
 
-numCycles = input("Enter number of desired cycles. ")
+numCycles = input("Enter number of desired cycles. for ",rigType)
 print("Test starting.")
 
 if len(numCycles) == 0:

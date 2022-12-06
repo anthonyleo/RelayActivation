@@ -64,7 +64,7 @@ if rigType == "1":    #Button delays
 elif rigType == "2":  #Lifter delays
     engageSleep = 3
     releaseSleep = 3
-    camera.start_recording('/home/pi/Desktop/video.h264')
+    camera.start_recording('liftingJig.h264')
 else:               #Lid Rotation delays
     engageSleep = 3
     releaseSleep = 6

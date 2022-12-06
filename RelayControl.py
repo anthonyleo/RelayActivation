@@ -8,10 +8,12 @@ import RPi.GPIO as GPIO
 from time import sleep
 import datetime
 from datetime import datetime
+from picamera import PiCamera
 import csv
 import os
 import keyboard
 
+camera = PiCamera()
 engageSleep = 0
 releaseSleep = 0
 
@@ -60,11 +62,12 @@ if rigType == "1":    #Button delays
     engageSleep = 1
     releaseSleep = 1
 elif rigType == "2":  #Lifter delays
-    engageSleep = 6
-    releaseSleep = 10
+    engageSleep = 3
+    releaseSleep = 3
+    camera.start_recording('/home/pi/Desktop/video.h264')
 else:               #Lid Rotation delays
     engageSleep = 3
-    releaseSleep = 8
+    releaseSleep = 6
 
 numCycles = input("Enter number of desired cycles. ")
 print("Test starting.")
@@ -93,6 +96,7 @@ try:
             pressCounter = pressCounter + 1
     
         print(numberCycles, " Cycles completed")
+        camera.stop_recording()
 #=======
 
 #try:

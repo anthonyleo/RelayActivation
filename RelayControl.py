@@ -5,7 +5,7 @@
 #>>>>>>> 5bd8b5ff5860aab12ce2ee97396b27227e80d271
 from platform import release
 import RPi.GPIO as GPIO
-from picamera import PiCamera
+#from picamera import PiCamera
 from time import sleep
 import datetime
 from datetime import datetime
@@ -64,7 +64,7 @@ if rigType == "1":    #Button delays
 elif rigType == "2":  #Lifter delays
     engageSleep = 3
     releaseSleep = 3
-    camera.start_recording('liftingJig.h264')
+    #camera.start_recording('liftingJig.h264')
 else:               #Lid Rotation delays
     engageSleep = 3
     releaseSleep = 6
@@ -96,7 +96,7 @@ try:
             pressCounter = pressCounter + 1
     
         print(numberCycles, " Cycles completed")
-        camera.stop_recording()
+        #camera.stop_recording()
 #=======
 
 #try:

@@ -13,7 +13,7 @@ import csv
 import os
 import keyboard
 
-camera = PiCamera()
+#camera = PiCamera()
 engageSleep = 0
 releaseSleep = 0
 

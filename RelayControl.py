@@ -5,15 +5,19 @@
 #>>>>>>> 5bd8b5ff5860aab12ce2ee97396b27227e80d271
 from platform import release
 import RPi.GPIO as GPIO
-#from picamera import PiCamera
+from picamera import PiCamera
 from time import sleep
 import datetime
 from datetime import datetime
 import csv
 import os
 import keyboard
+#from pydrive.auth import GoogleAuth
+#from pydrive.drive import GoogleDrive
 
-#camera = PiCamera()
+#gauth = GoogleAuth()
+#gauth.LocalWebserverAuth()
+#drive = GoogleDrive(gauth)
 engageSleep = 0
 releaseSleep = 0
 
@@ -25,6 +29,14 @@ def cycleRelays():
 
     GPIO.output(relay1,False)
     sleep(releaseSleep)
+    #if rigType == "2":
+    #    camera.start_preview()
+    #    sleep(5)
+    #    camera.capture('photo.jpg')
+
+    #    photo = drive.CreateFile({pressCounter: 'photo.jpg'})
+    #    photo.SetContentFile('photo.jpg')
+    #    photo.Upload()
     
     return
 
@@ -57,14 +69,15 @@ print("'1' for Button Press, or")
 print("'2' for Lifter, or")
 print("'3' for Lid Rotation")
 rigType = input("")
-
+f= open("cycleInfo.txt","w+")
 if rigType == "1":    #Button delays
     engageSleep = 1
     releaseSleep = 1
 elif rigType == "2":  #Lifter delays
     engageSleep = 3
     releaseSleep = 3
-    #camera.start_recording('liftingJig.h264')
+    #camera = PiCamera()
+    #camera.resolution = (640, 480)
 else:               #Lid Rotation delays
     engageSleep = 3
     releaseSleep = 6
@@ -84,6 +97,7 @@ try:
             
             
             cycleRelays()
+            f.write("Cycled relays #", pressCounter, "| Time Stamp:", getTimeStamp())
             print("Cycled relays #", pressCounter, "| Time Stamp:", getTimeStamp())
             pressCounter = pressCounter + 1
 
@@ -92,6 +106,7 @@ try:
         while pressCounter <= numberCycles:
 
             cycleRelays()
+            f.write("Cycled relays #", pressCounter, "| Time Stamp:", getTimeStamp())
             print("Cycled relays #", pressCounter, "of", numberCycles, "| Time Stamp:", getTimeStamp())
             pressCounter = pressCounter + 1
     

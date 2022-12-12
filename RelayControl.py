@@ -97,7 +97,7 @@ try:
             
             
             cycleRelays()
-            f.write("Cycled relays #", pressCounter, "| Time Stamp:", getTimeStamp())
+            f.write("Cycled relays #" + pressCounter + " | Time Stamp: " + getTimeStamp())
             print("Cycled relays #", pressCounter, "| Time Stamp:", getTimeStamp())
             pressCounter = pressCounter + 1
 
@@ -106,7 +106,7 @@ try:
         while pressCounter <= numberCycles:
 
             cycleRelays()
-            f.write("Cycled relays #", pressCounter, "| Time Stamp:", getTimeStamp())
+            f.write("Cycled relays #" + pressCounter + " | Time Stamp: " + getTimeStamp())
             print("Cycled relays #", pressCounter, "of", numberCycles, "| Time Stamp:", getTimeStamp())
             pressCounter = pressCounter + 1
     

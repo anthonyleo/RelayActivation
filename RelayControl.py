@@ -77,8 +77,8 @@ elif rigType == "2":  #Lifter delays
     #camera = PiCamera()
     #camera.resolution = (640, 480)
 else:               #Lid Rotation delays
-    engageSleep = 3
-    releaseSleep = 6
+    engageSleep = 5
+    releaseSleep = 5
 
 numCycles = input("Enter number of desired cycles. ")
 channel = int(input("Enter relay channel for test:"))

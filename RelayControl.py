@@ -107,6 +107,7 @@ try:
             print("Cycled relays #", pressCounter, "| Time Stamp:", getTimeStamp())
             pressCounter = pressCounter + 1
 
+        f.close()
         
     elif infCycleFlag == 0:
         while pressCounter <= numberCycles:
@@ -117,6 +118,7 @@ try:
             pressCounter = pressCounter + 1
     
         print(numberCycles, " Cycles completed")
+        f.close()
         #camera.stop_recording()
 #=======
 

@@ -73,14 +73,17 @@ f= open("cycleInfo.txt","w+")
 if rigType == "1":    #Button delays
     engageSleep = 1
     releaseSleep = 1
+    f.write("Button Press Test Rig")
 elif rigType == "2":  #Lifter delays
     engageSleep = 3
     releaseSleep = 3
+    f.write("Lifting Test Rig")
     #camera = PiCamera()
     #camera.resolution = (640, 480)
 else:               #Lid Rotation delays
     engageSleep = 3
     releaseSleep = 6
+    f.write("Lid Rotation Test Rig")
 
 numCycles = input("Enter number of desired cycles. ")
 print("Test starting.")

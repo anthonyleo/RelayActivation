@@ -22,12 +22,12 @@ engageSleep = 0
 releaseSleep = 0
 
 #<<<<<<< HEAD
-def cycleRelays():
+def cycleRelays(c):
     # Relays are active-low
-    GPIO.output(relay1,True)
+    GPIO.output(relayArray[c-1],True)
     sleep(engageSleep)            
 
-    GPIO.output(relay1,False)
+    GPIO.output(relayArray[c-1],False)
     sleep(releaseSleep)
     #if rigType == "2":
     #    camera.start_preview()
@@ -52,16 +52,14 @@ pressCounter = 1
 #>>>>>>> 5bd8b5ff5860aab12ce2ee97396b27227e80d271
 
 # Relay channel definitions
-relay1 = 26
-#relay2 = 20 but not in use
-#relay3 = 21 but not in use
+relayArray = [26,20,21]
 
 # Initialise GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-GPIO.setup(relay1,GPIO.OUT)
-#GPIO.setup(relay2,GPIO.OUT) but relay 2 not in use
-#GPIO.setup(relay3,GPIO.OUT) but relay 3 not in use
+GPIO.setup(relayArray[0],GPIO.OUT) #relay 1
+GPIO.setup(relayArray[1],GPIO.OUT) #relay 2
+GPIO.setup(relayArray[2],GPIO.OUT) #relay 3
 
 #<<<<<<< HEAD
 print("Specify test rig, type:")
@@ -83,6 +81,7 @@ else:               #Lid Rotation delays
     releaseSleep = 6
 
 numCycles = input("Enter number of desired cycles. ")
+channel = int(input("Enter relay channel for test:"))
 print("Test starting.")
 
 if len(numCycles) == 0:
@@ -96,7 +95,7 @@ try:
         while 1:
             
             
-            cycleRelays()
+            cycleRelays(channel)
             f.write("\nCycled relays #" + str(pressCounter) + " | Time Stamp: " + str(getTimeStamp()))
             print("Cycled relays #", pressCounter, "| Time Stamp:", getTimeStamp())
             pressCounter = pressCounter + 1
@@ -105,7 +104,7 @@ try:
     elif infCycleFlag == 0:
         while pressCounter <= numberCycles:
 
-            cycleRelays()
+            cycleRelays(channel)
             f.write("\nCycled relays #" + str(pressCounter) + " | Time Stamp: " + str(getTimeStamp()))
             print("Cycled relays #", pressCounter, "of", numberCycles, "| Time Stamp:", getTimeStamp())
             pressCounter = pressCounter + 1

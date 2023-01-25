@@ -87,7 +87,7 @@ else:               #Lid Rotation delays
     f.write("Lid Rotation Test Rig")
 
 numCycles = input("Enter number of desired cycles. ")
-channel = int(input("Enter relay channel for test:"))
+channel = int(input("Enter relay channel for test (1-3):"))
 print("Test starting.")
 
 if len(numCycles) == 0:

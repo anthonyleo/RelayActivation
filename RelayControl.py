@@ -83,8 +83,8 @@ elif rigType == "2":  #Lifter delays
     #camera = PiCamera()
     #camera.resolution = (640, 480)
 else:               #Lid Rotation delays
-    engageSleep = 5
-    releaseSleep = 5
+    engageSleep = 6
+    releaseSleep = 2
     f.write("Lid Rotation Test Rig")
 
 numCycles = input("Enter number of desired cycles. ")

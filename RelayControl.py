@@ -67,7 +67,10 @@ print("'1' for Button Press, or")
 print("'2' for Lifter, or")
 print("'3' for Lid Rotation")
 rigType = input("")
-f= open("cycleInfo.txt","w+")
+
+filename = "cycleInfo_"+rigType+"_"+datetime.now().strftime("%d-%m-%y")
+f= open("%s.csv" % filename,"w+")
+
 if rigType == "1":    #Button delays
     engageSleep = 1
     releaseSleep = 1

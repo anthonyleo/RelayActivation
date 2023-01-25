@@ -68,7 +68,8 @@ print("'2' for Lifter, or")
 print("'3' for Lid Rotation")
 rigType = input("")
 
-filename = "cycleInfo_"+rigType+"_"+datetime.now().strftime("%d-%m-%y")
+serial = input("Enter device serial #:")
+filename = "cycleInfo_"+serial+"_"+str(rigType)+"_"+str(datetime.now().strftime("%d-%m-%y"))
 f= open("%s.csv" % filename,"w+")
 
 if rigType == "1":    #Button delays

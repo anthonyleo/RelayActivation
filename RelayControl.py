@@ -12,6 +12,7 @@ from datetime import datetime
 import csv
 import os
 import keyboard
+import shutil
 #from pydrive.auth import GoogleAuth
 #from pydrive.drive import GoogleDrive
 
@@ -127,6 +128,7 @@ try:
     
         print(numberCycles, " Cycles completed")
         f.close()
+        shutil.move("/home/vbreathe/RelayActivation/%s.csv" % filename,"/home/vbreathe/RelayActivation/Archive/%s.csv" %filename)
         #camera.stop_recording()
 #=======
 

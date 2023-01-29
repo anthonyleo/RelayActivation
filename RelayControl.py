@@ -72,6 +72,7 @@ rigType = input("")
 serial = input("Enter device serial #: ")
 filename = "cycleInfo_"+serial+"_"+str(rigType)+"_"+str(datetime.now().strftime("%d-%m-%y"))
 f= open("%s.csv" % filename,"w+")
+shutil.move("/home/vbreathe/RelayActivation/"+filename+".csv","/home/vbreathe/RelayActivation/Archive/"+filename+".csv")
 
 if rigType == "1":    #Button delays
     engageSleep = 1
@@ -128,7 +129,6 @@ try:
     
         print(numberCycles, " Cycles completed")
         f.close()
-        shutil.move("/home/vbreathe/RelayActivation/"+filename+".csv","/home/vbreathe/RelayActivation/Archive/"+filename+".csv")
         #camera.stop_recording()
 #=======
 

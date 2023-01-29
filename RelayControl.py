@@ -128,7 +128,7 @@ try:
     
         print(numberCycles, " Cycles completed")
         f.close()
-        shutil.move("/home/vbreathe/RelayActivation/%s.csv" % filename,"/home/vbreathe/RelayActivation/Archive/%s.csv" %filename)
+        shutil.move("/home/vbreathe/RelayActivation/%s.csv" % filename,"/home/vbreathe/RelayActivation/Archive/%s.csv" % filename)
         #camera.stop_recording()
 #=======
 

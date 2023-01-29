@@ -104,13 +104,13 @@ if((input("Do you wish to change the extension and retraction time for the actua
 if((input("Test rig using V&V "+str(testCycles)+" test cycles? (Y/N): ")) == "Y"):
     numCycles = testCycles
 else:
-    numCycles = input("Enter number of desired cycles: ")
+    numCycles = int(input("Enter number of desired cycles: "))
 
 
 channel = int(input("Enter relay channel for test (1-3):"))
 print("Test starting.")
 
-if len(numCycles) == 0:
+if numCycles == 0:
     infCycleFlag = 1
 else:
     numberCycles = int(numCycles)

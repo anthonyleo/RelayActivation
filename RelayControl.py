@@ -90,7 +90,7 @@ else:               #Lid Rotation delays
     testCycles = 20448
     f.write("Lid Rotation Test Rig")
 
-if(bool(input("Test rig using V&V "+str(testCycles)+" test cycles? (Enter 1 for 'TRUE' OR 0 for 'FALSE'):"))):
+if((input("Test rig using V&V "+str(testCycles)+" test cycles? (Enter 1 for 'TRUE' OR 0 for 'FALSE'):"))=="1"):
     numCycles = testCycles
 else:
     numCycles = input("Enter number of desired cycles. ")

@@ -75,19 +75,27 @@ f= open("%s.csv" % filename,"w+")
 if rigType == "1":    #Button delays
     engageSleep = 1
     releaseSleep = 1
+    testCycles = 102240
     f.write("Button Press Test Rig")
 elif rigType == "2":  #Lifter delays
     engageSleep = 3
     releaseSleep = 3
+    testCycles = 5112
     f.write("Lifting Test Rig")
     #camera = PiCamera()
     #camera.resolution = (640, 480)
 else:               #Lid Rotation delays
     engageSleep = 6
     releaseSleep = 2
+    testCycles = 20448
     f.write("Lid Rotation Test Rig")
 
-numCycles = input("Enter number of desired cycles. ")
+if(bool(input("Test rig using V&V "+str(testCycles)+"? (Enter 1 for TRUE and 0 for FALSE)"))):
+    numCycles = testCycles
+else:
+    numCycles = input("Enter number of desired cycles. ")
+
+
 channel = int(input("Enter relay channel for test (1-3):"))
 print("Test starting.")
 

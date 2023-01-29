@@ -95,6 +95,7 @@ else:               #Lid Rotation delays
 print("Please see actuator extension and retraction timer defaults:")
 print("Extension: "+str(engageSleep)+" s")
 print("Retraction: "+str(releaseSleep)+" s")
+print("")
 if((input("Do you wish to change the extension and retraction time for the actuator from its defaults? (Y/N): ")) == "Y"):
     engageSleep = int(input("Enter new extension time in seconds: "))
     releaseSleep = int(input("Enter new retraction time in seconds: "))

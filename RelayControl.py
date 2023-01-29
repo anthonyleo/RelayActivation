@@ -68,7 +68,7 @@ print("'2' for Lifter, or")
 print("'3' for Lid Rotation")
 rigType = input("")
 
-serial = input("Enter device serial #:")
+serial = input("Enter device serial #: ")
 filename = "cycleInfo_"+serial+"_"+str(rigType)+"_"+str(datetime.now().strftime("%d-%m-%y"))
 f= open("%s.csv" % filename,"w+")
 
@@ -90,10 +90,10 @@ else:               #Lid Rotation delays
     testCycles = 20448
     f.write("Lid Rotation Test Rig")
 
-if((input("Test rig using V&V "+str(testCycles)+" test cycles? (Enter 1 for 'TRUE' OR 0 for 'FALSE'):"))=="1"):
+if((input("Test rig using V&V "+str(testCycles)+" test cycles? (Enter 1 for 'TRUE' OR 0 for 'FALSE'): "))=="1"):
     numCycles = testCycles
 else:
-    numCycles = input("Enter number of desired cycles. ")
+    numCycles = input("Enter number of desired cycles: ")
 
 
 channel = int(input("Enter relay channel for test (1-3):"))

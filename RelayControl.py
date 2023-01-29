@@ -93,12 +93,12 @@ else:               #Lid Rotation delays
     f.write("Lid Rotation Test Rig")
 
 print("Please see actuator extension and retraction timer defaults:")
-print("Extension: "+engageSleep+" s")
-print("Retraction: "+releaseSleep+" s")
+print("Extension: "+str(engageSleep)+" s")
+print("Retraction: "+str(releaseSleep)+" s")
 if((input("Do you wish to change the extension and retraction time for the actuator from its defaults? (Y/N): ")) == "Y"):
     engageSleep = int(input("Enter new extension time in seconds: "))
     releaseSleep = int(input("Enter new retraction time in seconds: "))
-    
+
 if((input("Test rig using V&V "+str(testCycles)+" test cycles? (Enter 1 for 'TRUE' OR 0 for 'FALSE'): "))=="1"):
     numCycles = testCycles
 else:

@@ -70,27 +70,28 @@ print("'3' for Lid Rotation")
 rigType = input("")
 
 serial = input("Enter device serial #: ")
-filename = "cycleInfo_"+serial+"_"+str(rigType)+"_"+str(datetime.now().strftime("%d-%m-%y"))
-f= open("%s.csv" % filename,"w+")
-shutil.move("/home/vbreathe/RelayActivation/"+filename+".csv","/home/vbreathe/RelayActivation/Archive/"+filename+".csv")
 
 if rigType == "1":    #Button delays
+    rigName = "ButtonPress"
     engageSleep = 1
     releaseSleep = 1
     testCycles = 102240
-    f.write("Button Press Test Rig")
 elif rigType == "2":  #Lifter delays
+    rigName = "LidLifter"
     engageSleep = 3
     releaseSleep = 3
     testCycles = 5112
-    f.write("Lifting Test Rig")
     #camera = PiCamera()
     #camera.resolution = (640, 480)
 else:               #Lid Rotation delays
+    rigName = "LidRotate"
     engageSleep = 6
     releaseSleep = 2
     testCycles = 20448
-    f.write("Lid Rotation Test Rig")
+
+filename = "cycleInfo_"+serial+"_"+str(rigName)+"_"+str(datetime.now().strftime("%d-%m-%y"))
+f= open("%s.csv" % filename,"w+")
+shutil.move("/home/vbreathe/RelayActivation/"+filename+".csv","/home/vbreathe/RelayActivation/Archive/"+filename+".csv")
 
 print("Please see actuator extension and retraction timer defaults for this test rig:")
 print("Extension: "+str(engageSleep)+" s")

@@ -67,16 +67,16 @@ print("Specify test rig, type:")
 print("'1' for Button Press, or")
 print("'2' for Lifter, or")
 print("'3' for Lid Rotation")
-rigType = input("")
+rigType = int(input(""))
 
 serial = input("Enter device serial #: ")
 
-if rigType == "1":    #Button delays
+if rigType == 1:    #Button delays
     rigName = "ButtonPress"
     engageSleep = 1
     releaseSleep = 1
     testCycles = 102240
-elif rigType == "2":  #Lifter delays
+elif rigType == 2:  #Lifter delays
     rigName = "LidLifter"
     engageSleep = 3
     releaseSleep = 3

@@ -83,7 +83,7 @@ else:               #Lid Rotation delays
     releaseSleep = 2
     testCycles = 20448
 
-filename = str(datetime.now().strftime("%d-%m-%y")+"_"+str(rigName)+"_cycleInfo_"+serial)
+filename = str(datetime.now().strftime("%d-%m-%y")+"_"+rigName+"_cycleInfo_"+serial)
 f= open("%s.csv" % filename,"w+")
 shutil.move("/home/vbreathe/RelayActivation/"+filename+".csv","/home/vbreathe/RelayActivation/Archive/"+filename+".csv")
 f.write("Test "+rigName+" starting...")
@@ -113,7 +113,6 @@ else:
 try:
     if infCycleFlag == 1:
         while 1:
-            
             
             cycleRelays(channel)
             f.write("\nCycled relays #" + str(pressCounter) + " | Time Stamp: " + str(getTimeStamp()))

@@ -113,7 +113,6 @@ print("Test starting.")
 if numCycles == 0:
     infCycleFlag = 1
 else:
-    numberCycles = int(numCycles)
     infCycleFlag = 0
 
 try:
@@ -129,14 +128,14 @@ try:
         f.close()
         
     elif infCycleFlag == 0:
-        while pressCounter <= numberCycles:
+        while pressCounter <= numCycles:
 
             cycleRelays(channel)
             f.write("\nCycled relays #" + str(pressCounter) + " | Time Stamp: " + str(getTimeStamp()))
-            print("Cycled relays #", pressCounter, "of", numberCycles, "| Time Stamp:", getTimeStamp())
+            print("Cycled relays #", pressCounter, "of", numCycles, "| Time Stamp:", getTimeStamp())
             pressCounter = pressCounter + 1
     
-        print(numberCycles, " Cycles completed")
+        print(numCycles, " Cycles completed")
         f.close()
         #camera.stop_recording()
 #=======

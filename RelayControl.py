@@ -85,13 +85,14 @@ elif rigType == "2":  #Lifter delays
     #camera.resolution = (640, 480)
 else:               #Lid Rotation delays
     rigName = "LidRotate"
-    engageSleep = 6
+    engageSleep = 7
     releaseSleep = 2
     testCycles = 20448
 
 filename = "cycleInfo_"+serial+"_"+str(rigName)+"_"+str(datetime.now().strftime("%d-%m-%y"))
 f= open("%s.csv" % filename,"w+")
 shutil.move("/home/vbreathe/RelayActivation/"+filename+".csv","/home/vbreathe/RelayActivation/Archive/"+filename+".csv")
+f.write("Test "+rigName+" starting...")
 
 print("Please see actuator extension and retraction timer defaults for this test rig:")
 print("Extension: "+str(engageSleep)+" s")

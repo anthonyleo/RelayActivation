@@ -16,6 +16,7 @@ import shutil
 
 engageSleep = 0
 releaseSleep = 0
+cycleCount = 0
 
 #<<<<<<< HEAD
 def cycleRelays(c):
@@ -49,9 +50,11 @@ relayArray = [26,20,21]
 # Initialise GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-GPIO.setup(relayArray[0],GPIO.OUT) #relay 1
-GPIO.setup(relayArray[1],GPIO.OUT) #relay 2
-GPIO.setup(relayArray[2],GPIO.OUT) #relay 3
+GPIO.setup(14,GPIO.IN)              #TX pin max status
+GPIO.setup(15,GPIO.IN)              #RX pin max status
+GPIO.setup(relayArray[0],GPIO.OUT)  #relay 1
+GPIO.setup(relayArray[1],GPIO.OUT)  #relay 2
+GPIO.setup(relayArray[2],GPIO.OUT)  #relay 3
 
 #<<<<<<< HEAD
 print("Specify test rig, type:")
@@ -117,6 +120,7 @@ try:
             cycleRelays(channel)
             f.write("\nCycled relays #" + str(pressCounter) + " | Time Stamp: " + str(getTimeStamp()))
             print("Cycled relays #", pressCounter, "| Time Stamp:", getTimeStamp())
+
             pressCounter = pressCounter + 1
 
         f.close()

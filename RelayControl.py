@@ -107,7 +107,7 @@ else:
     numCycles = int(input("Enter number of desired cycles: "))
 
 
-channel = int(input("Enter relay channel for test (1-3):"))
+channel = int(input("Enter relay channel for test (1-3): "))
 print("Test starting.")
 
 if numCycles == 0:

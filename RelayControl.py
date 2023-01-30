@@ -89,8 +89,8 @@ shutil.move("/home/vbreathe/RelayActivation/"+filename+".csv","/home/vbreathe/Re
 f.write("Test "+rigName+" starting...")
 
 print("Please see actuator extension and retraction timer defaults for this test rig:")
-print("Extension: "+str(engageSleep)+" s")
-print("Retraction: "+str(releaseSleep)+" s")
+print("Extension: "+str(engageSleep)+"s")
+print("Retraction: "+str(releaseSleep)+"s")
 print("")
 if((input("Do you wish to change the extension and retraction time for the actuator from its defaults? (Y/N): ")) == "Y"):
     engageSleep = int(input("Enter new extension time in seconds: "))

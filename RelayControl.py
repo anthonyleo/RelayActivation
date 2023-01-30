@@ -13,12 +13,7 @@ import csv
 import os
 import keyboard
 import shutil
-#from pydrive.auth import GoogleAuth
-#from pydrive.drive import GoogleDrive
 
-#gauth = GoogleAuth()
-#gauth.LocalWebserverAuth()
-#drive = GoogleDrive(gauth)
 engageSleep = 0
 releaseSleep = 0
 
@@ -30,7 +25,7 @@ def cycleRelays(c):
 
     GPIO.output(relayArray[c-1],False)
     sleep(releaseSleep)
-    #if rigType == "2":
+
     #    camera.start_preview()
     #    sleep(5)
     #    camera.capture('photo.jpg')
@@ -76,13 +71,16 @@ if rigType == 1:    #Button delays
     engageSleep = 1
     releaseSleep = 1
     testCycles = 102240
+
 elif rigType == 2:  #Lifter delays
     rigName = "LidLifter"
     engageSleep = 3
     releaseSleep = 3
     testCycles = 5112
+
     #camera = PiCamera()
     #camera.resolution = (640, 480)
+
 else:               #Lid Rotation delays
     rigName = "LidRotate"
     engageSleep = 7
@@ -141,18 +139,6 @@ try:
         #camera.stop_recording()
 #=======
 
-#try:
-#    while True:
-        
-#        cycleRelays()
-        # Relays are active-low
-        #GPIO.output(relay1,True)
-        #sleep(3)
-
-#        print("Cycling relays #", pressCounter)
-        #GPIO.output(relay1,False)
-        #sleep(5)
-#        pressCounter = pressCounter + 1
 #>>>>>>> 5bd8b5ff5860aab12ce2ee97396b27227e80d271
     
 except KeyboardInterrupt:

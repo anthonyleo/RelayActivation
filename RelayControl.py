@@ -89,7 +89,7 @@ else:               #Lid Rotation delays
     releaseSleep = 2
     testCycles = 20448
 
-filename = "cycleInfo_"+serial+"_"+str(rigName)+"_"+str(datetime.now().strftime("%d-%m-%y"))
+filename = str(datetime.now().strftime("%d-%m-%y")+"_"+str(rigName)+"_cycleInfo_"+serial)
 f= open("%s.csv" % filename,"w+")
 shutil.move("/home/vbreathe/RelayActivation/"+filename+".csv","/home/vbreathe/RelayActivation/Archive/"+filename+".csv")
 f.write("Test "+rigName+" starting...")

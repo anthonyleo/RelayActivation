@@ -29,10 +29,6 @@ def cycleRelays(c):
     #    camera.start_preview()
     #    sleep(5)
     #    camera.capture('photo.jpg')
-
-    #    photo = drive.CreateFile({pressCounter: 'photo.jpg'})
-    #    photo.SetContentFile('photo.jpg')
-    #    photo.Upload()
     
     return
 

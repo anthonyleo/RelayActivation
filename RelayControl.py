@@ -59,8 +59,8 @@ GPIO.setup(relayArray[2],GPIO.OUT)  #relay 3
 #<<<<<<< HEAD
 print("Specify test type:")
 print("'1' for Button Press, or")
-print("'2' for Lifter, or")
-print("'3' for Lid Rotation")
+print("'2' for Max Lifter, or")
+print("'3' for Max Lid Rotation")
 print("'4' for custom parameters")
 rigType = int(input(""))
 
@@ -88,10 +88,10 @@ elif rigType == 3:  #Lid Rotation delays
     testCycles = 20448
 
 else:
-    rigName = input("Enter Test name:")
+    rigName = input("Enter Test name: ")
     engageSleep = int(input("Enter Relay engagement time in seconds: "))
     releaseSleep = int(input("Enter Relay off time in seconds: "))
-    testCycles = int(input("Enter number of desired Relay cycles: (Please enter for infinte) "))
+    testCycles = int(input("Enter number of desired Relay cycles: (Enter '0' for infinte) "))
 
 filename = str(datetime.now().strftime("%d-%m-%y")+"_"+rigName+"_cycleInfo_"+serial)
 f= open("%s.csv" % filename,"w+")

@@ -57,10 +57,11 @@ GPIO.setup(relayArray[1],GPIO.OUT)  #relay 2
 GPIO.setup(relayArray[2],GPIO.OUT)  #relay 3
 
 #<<<<<<< HEAD
-print("Specify test rig, type:")
+print("Specify test type:")
 print("'1' for Button Press, or")
 print("'2' for Lifter, or")
 print("'3' for Lid Rotation")
+print("'4' for custom parameters")
 rigType = int(input(""))
 
 serial = input("Enter device serial #: ")
@@ -80,11 +81,17 @@ elif rigType == 2:  #Lifter delays
     #camera = PiCamera()
     #camera.resolution = (640, 480)
 
-else:               #Lid Rotation delays
+elif rigType == 3:  #Lid Rotation delays
     rigName = "LidRotate"
     engageSleep = 7
     releaseSleep = 2
     testCycles = 20448
+
+else:
+    rigName = input("Enter Test name:")
+    engageSleep = int(input("Enter Relay engagement time in seconds"))
+    releaseSleep = int(input("Enter Relay off time in seconds:"))
+    testCycles = int(input("Enter number of desired Relay cycles: (Please enter for infinte)"))
 
 filename = str(datetime.now().strftime("%d-%m-%y")+"_"+rigName+"_cycleInfo_"+serial)
 f= open("%s.csv" % filename,"w+")
@@ -95,11 +102,11 @@ print("Please see actuator extension and retraction timer defaults for this test
 print("Extension: "+str(engageSleep)+"s")
 print("Retraction: "+str(releaseSleep)+"s")
 print("")
-if((input("Do you wish to change the extension and retraction time for the actuator from its defaults? (Y/N): ")) == "Y"):
+if(rigType == 4 | (input("Do you wish to change the extension and retraction time for the actuator from its defaults? (Y/N): ")) == "Y"):
     engageSleep = int(input("Enter new extension time in seconds: "))
     releaseSleep = int(input("Enter new retraction time in seconds: "))
 
-if((input("Test rig using V&V "+str(testCycles)+" test cycles? (Y/N): ")) == "Y"):
+if(rigType == 4 | (input("Test rig using V&V "+str(testCycles)+" test cycles? (Y/N): ")) == "Y"):
     numCycles = testCycles
 else:
     numCycles = int(input("Enter number of desired cycles: "))

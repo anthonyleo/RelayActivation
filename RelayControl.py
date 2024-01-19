@@ -91,7 +91,7 @@ else:
     rigName = input("Enter Test name: ")
     engageSleep = int(input("Enter Relay engagement time in seconds: "))
     releaseSleep = int(input("Enter Relay off time in seconds: "))
-    testCycles = int(input("Enter number of desired Relay cycles: (Enter '0' for infinte) "))
+    numCycles = int(input("Enter number of desired Relay cycles: (Enter '0' for infinte) "))
 
 filename = str(datetime.now().strftime("%d-%m-%y")+"_"+rigName+"_cycleInfo_"+serial)
 f= open("%s.csv" % filename,"w+")
@@ -111,7 +111,6 @@ if(rigType != 4):
         numCycles = testCycles
     else:
         numCycles = int(input("Enter number of desired cycles: "))
-print(numCycles)
 
 channel = int(input("Enter relay channel for test (1-3): "))
 print("Test starting.")

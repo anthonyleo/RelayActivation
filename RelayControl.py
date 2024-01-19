@@ -89,9 +89,9 @@ elif rigType == 3:  #Lid Rotation delays
 
 else:
     rigName = input("Enter Test name:")
-    engageSleep = int(input("Enter Relay engagement time in seconds"))
-    releaseSleep = int(input("Enter Relay off time in seconds:"))
-    testCycles = int(input("Enter number of desired Relay cycles: (Please enter for infinte)"))
+    engageSleep = int(input("Enter Relay engagement time in seconds: "))
+    releaseSleep = int(input("Enter Relay off time in seconds: "))
+    testCycles = int(input("Enter number of desired Relay cycles: (Please enter for infinte) "))
 
 filename = str(datetime.now().strftime("%d-%m-%y")+"_"+rigName+"_cycleInfo_"+serial)
 f= open("%s.csv" % filename,"w+")
@@ -102,14 +102,15 @@ print("Please see actuator extension and retraction timer defaults for this test
 print("Extension: "+str(engageSleep)+"s")
 print("Retraction: "+str(releaseSleep)+"s")
 print("")
-if(rigType == 4 | (input("Do you wish to change the extension and retraction time for the actuator from its defaults? (Y/N): ")) == "Y"):
-    engageSleep = int(input("Enter new extension time in seconds: "))
-    releaseSleep = int(input("Enter new retraction time in seconds: "))
+if(rigType != 4):
+    if((input("Do you wish to change the extension and retraction time for the actuator from its defaults? (Y/N): ")) == "Y"):
+        engageSleep = int(input("Enter new extension time in seconds: "))
+        releaseSleep = int(input("Enter new retraction time in seconds: "))
 
-if(rigType == 4 | (input("Test rig using V&V "+str(testCycles)+" test cycles? (Y/N): ")) == "Y"):
-    numCycles = testCycles
-else:
-    numCycles = int(input("Enter number of desired cycles: "))
+    if((input("Test rig using V&V "+str(testCycles)+" test cycles? (Y/N): ")) == "Y"):
+        numCycles = testCycles
+    else:
+        numCycles = int(input("Enter number of desired cycles: "))
 
 
 channel = int(input("Enter relay channel for test (1-3): "))

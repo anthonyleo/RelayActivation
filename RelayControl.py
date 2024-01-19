@@ -111,7 +111,7 @@ if(rigType != 4):
         numCycles = testCycles
     else:
         numCycles = int(input("Enter number of desired cycles: "))
-
+print(numCycles)
 
 channel = int(input("Enter relay channel for test (1-3): "))
 print("Test starting.")

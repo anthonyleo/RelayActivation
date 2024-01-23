@@ -44,7 +44,7 @@ The Max registered sensor information will be found in the "/home/RelayActivatio
 <Your input through the log code>.csv
 
 To retreive these files and their information use the following command from the windows command prompt "cmd":
-"pscp -P 22 vbreathe@192.168.0.136:/home/vbreathe/RelayActivation/Archive/<file_name>.csv <name_of_file>.csv"
+"pscp -P 22 vbreathe@192.168.5.168:/home/vbreathe/RelayActivation/Archive/<file_name>.csv <name_of_file>.csv"
 
 The file copies to the working directory
 

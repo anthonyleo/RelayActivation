@@ -89,8 +89,8 @@ elif rigType == 3:  #Lid Rotation delays
 
 else:
     rigName = input("Enter Test name: ")
-    engageSleep = int(input("Enter Relay engagement time in seconds: "))
-    releaseSleep = int(input("Enter Relay off time in seconds: "))
+    engageSleep = float(input("Enter Relay engagement time in seconds: "))
+    releaseSleep = float(input("Enter Relay off time in seconds: "))
     numCycles = int(input("Enter number of desired Relay cycles: (Enter '0' for infinte) "))
 
 filename = str(datetime.now().strftime("%d-%m-%y")+"_"+rigName+"_cycleInfo_"+serial)

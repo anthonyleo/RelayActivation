@@ -113,7 +113,8 @@ if(rigType != 4):
         numCycles = int(input("Enter number of desired cycles: "))
 
 channel = int(input("Enter relay channel for test (1-3): "))
-print("Test starting.")
+f.write("Test starting | Start time: " + str(getTimeStamp()))
+print("Test starting | Start time: " + str(getTimeStamp()))
 
 if numCycles == 0:
     infCycleFlag = 1
